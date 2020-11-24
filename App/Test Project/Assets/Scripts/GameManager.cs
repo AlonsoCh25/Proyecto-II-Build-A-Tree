@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         {
             menuPrincipal.SetActive(false);
             
-            fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0, 0.1f) * Time.deltaTime;
+            fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.02f, 0) * Time.deltaTime;
         
             // Mover mapa
 

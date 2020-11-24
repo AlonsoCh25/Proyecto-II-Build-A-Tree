@@ -11,19 +11,27 @@ C:\Program Files\Unity\Hub\Editor\2020.2.0b11\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Usuario/Documents/GitHub/Proyecto-II-Build-A-Tree/App/Test Project
+C:/Users/Usuario/Desktop/Test Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 57996
 Successfully changed project path to: C:/Users/Usuario/Documents/GitHub/Proyecto-II-Build-A-Tree/App/Test Project
 C:/Users/Usuario/Documents/GitHub/Proyecto-II-Build-A-Tree/App/Test Project
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 78.46 ms, found 1 plugins.
+=======
+64048
+Successfully changed project path to: C:/Users/Usuario/Desktop/Test Project
+C:/Users/Usuario/Desktop/Test Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 52.93 ms, found 1 plugins.
+>>>>>>> parent of 44812eb... Orientacion
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.0b11 (c499c2bf2e80)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.0b11/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Usuario/Documents/GitHub/Proyecto-II-Build-A-Tree/App/Test Project/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Usuario/Desktop/Test Project/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -35,6 +43,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.0b11/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.0b11/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.0b11/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -42,24 +51,45 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.0b11/
 Registered in 0.004061 seconds.
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 75.48 ms, found 1 plugins.
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56844
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.0b11/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001937 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 46.47 ms, found 1 plugins.
+>>>>>>> parent of 44812eb... Orientacion
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  2.325 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
 Registered in 0.002133 seconds.
+=======
+- Completed reload, in  1.241 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001561 seconds.
+>>>>>>> parent of 44812eb... Orientacion
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto-II-Build-A-Tree\App\Test Project\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Usuario\Desktop\Test Project\Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll
 Native extension for WindowsStandalone target not found
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 86.98 ms, found 1 plugins.
+=======
+Refreshing native plugins compatible for Editor in 45.77 ms, found 1 plugins.
+>>>>>>> parent of 44812eb... Orientacion
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  2.595 seconds
 Platform modules already initialized, skipping
 ========================================================================
@@ -244,5 +274,27 @@ System memory in use after: 51.3 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2255.
 Total: 3.419500 ms (FindLiveObjects: 0.511500 ms CreateObjectMapping: 0.180200 ms MarkObjects: 2.629600 ms  DeleteObjects: 0.096600 ms)
+=======
+- Completed reload, in  1.070 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1835 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2279.
+Total: 2.961800 ms (FindLiveObjects: 0.679200 ms CreateObjectMapping: 0.194500 ms MarkObjects: 1.975000 ms  DeleteObjects: 0.111900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/ARCADECLASSIC SDF.asset
+  artifactKey: Guid(e147e59d4728c564cbe4f5dc261ed0d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARCADECLASSIC SDF.asset using Guid(e147e59d4728c564cbe4f5dc261ed0d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4cfb478eedda66c52c16ca6b31ecfea') in 0.171035 seconds
+  Import took 0.177645 seconds .
+>>>>>>> parent of 44812eb... Orientacion
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
