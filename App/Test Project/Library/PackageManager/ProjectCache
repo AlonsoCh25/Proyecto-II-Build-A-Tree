@@ -926,9 +926,11 @@ m_PackageAssets:
         - 1.1.14
         - 1.1.16
         - 1.1.18
+        - 1.1.19
         compatible:
         - 1.1.18
-        verified: 1.1.18
+        - 1.1.19
+        verified: 1.1.19
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.0
@@ -3100,12 +3102,14 @@ m_PackageAssets:
         - 0.1.6-preview
         - 0.1.9-preview
         - 1.0.0
+        - 1.0.5
         compatible:
         - 0.1.5-preview
         - 0.1.6-preview
         - 0.1.9-preview
         - 1.0.0
-        verified: 1.0.0
+        - 1.0.5
+        verified: 1.0.5
       dependencies: []
       resolvedDependencies: []
       keywords:
