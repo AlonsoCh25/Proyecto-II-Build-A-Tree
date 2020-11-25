@@ -8,28 +8,33 @@ public class GameManager : MonoBehaviour
     public GameObject menuPrincipal;
     public GameObject menuGameOver;
     
-    public float velocidad = 2;
-    public GameObject col;
-    public GameObject piedra1;
-    public GameObject piedra2;
+    public GameObject plataforma1;
+    public GameObject plataforma2;
+    public GameObject plataforma3;
+    public GameObject plataforma4;
+    public GameObject plataforma5;
+    public GameObject plataforma6;
+    public GameObject plataforma7;
+    public GameObject plataforma8;
     public Renderer fondo;
     public bool gameOver = false;
     public bool start = false;
 
     public List<GameObject> cols;
     public List<GameObject> obstaculos;
+    public List<GameObject> plataformas;
     // Start is called before the first frame update
     void Start()
     {
-        // Crear mapa
-        for (int i = 0; i < 21; i++)
-        {
-            cols.Add(Instantiate(col,new Vector2(-10 + i,-3),Quaternion.identity));
-        }
-        
-        // Crear Piedras
-        obstaculos.Add(Instantiate(piedra1,new Vector2(14,-2),Quaternion.identity));
-        obstaculos.Add(Instantiate(piedra2,new Vector2(18,-2),Quaternion.identity));
+        // Crear Plataformas
+        plataformas.Add(Instantiate(plataforma1, new Vector2((float)-11,(float)4.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma2, new Vector2((float)-3.5,(float)4.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma3, new Vector2((float)-7.5,(float)1),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma4,new Vector2((float)0.5,(float)1),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma5,new Vector2((float)-11.5,(float)-2.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma6,new Vector2((float)-4,(float)-2.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma7,new Vector2((float)-10.5,(float)-6),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma8,new Vector2((float)0,(float)-6),Quaternion.identity));
     }
 
     // Update is called once per frame
@@ -59,29 +64,8 @@ public class GameManager : MonoBehaviour
             
             fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0, 0.1f) * Time.deltaTime;
         
-            // Mover mapa
-
-            for (int i = 0; i < cols.Count; i++)
-            {
-                if (cols[i].transform.position.x <= -10)
-                {
-                    cols[i].transform.position = new Vector3(10,-3,0);
-                }
             
-                cols[i].transform.position = cols[i].transform.position + new Vector3(-1,0,0) * Time.deltaTime * velocidad;
-            }
-        
-            // Mover obstaculos
-            for (int i = 0; i < obstaculos.Count; i++)
-            {
-                if (obstaculos[i].transform.position.x <= -10)
-                {
-                    float randomObs = Random.Range(11, 18);
-                    obstaculos[i].transform.position = new Vector3(randomObs,-2,0);
-                }
             
-                obstaculos[i].transform.position = obstaculos[i].transform.position + new Vector3(-1,0,0) * Time.deltaTime * velocidad;
-            }
         }
     }
 }

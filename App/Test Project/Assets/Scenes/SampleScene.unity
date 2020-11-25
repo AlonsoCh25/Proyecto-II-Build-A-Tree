@@ -309,7 +309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: faeacdba27f6841459109193072cde59, type: 2}
+  - {fileID: 2100000, guid: 9a8ec5367f83a5a4e95f394170e0410e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 293063995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 13, z: 1}
+  m_LocalScale: {x: 25, y: 18, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -573,7 +573,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.9668283
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -634,15 +634,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPrincipal: {fileID: 1722812262}
   menuGameOver: {fileID: 1675385272}
-  velocidad: 2
-  col: {fileID: 3692487985456074754, guid: 2552d912391aadd4aa7859831e9eaa0c, type: 3}
-  piedra1: {fileID: 2884364178945979828, guid: 9679699afb9c20544943076891f38bf2, type: 3}
-  piedra2: {fileID: 7032920308084794641, guid: f02a2478732df8b45bd67ebec1797552, type: 3}
+  plataforma1: {fileID: 5644950561826640929, guid: 6756a788bf146384ca9e5fedd4ee415d, type: 3}
+  plataforma2: {fileID: 6918795363267936083, guid: 1294ac02b844e604e9dedb9e3976bdab, type: 3}
+  plataforma3: {fileID: 3614172272002614374, guid: 26c5e1f938735fd41ba72df9f577354e, type: 3}
+  plataforma4: {fileID: 824339204869384012, guid: d135409acfeedf84ab70c761d328aecc, type: 3}
+  plataforma5: {fileID: 8450173875101265802, guid: 523e94eb81ec03d46a33c354b30b67c7, type: 3}
+  plataforma6: {fileID: 3406458596775185568, guid: 42395d678166a504382c2d36fea1a5e7, type: 3}
+  plataforma7: {fileID: 6565850682436083400, guid: 72234218422e3454ebd8fc7e22861b1a, type: 3}
+  plataforma8: {fileID: 111020072085487550, guid: 487e65950405c8a4fb4099c14da7a955, type: 3}
   fondo: {fileID: 293063997}
   gameOver: 0
   start: 0
   cols: []
   obstaculos: []
+  plataformas: []
 --- !u!4 &538573280
 Transform:
   m_ObjectHideFlags: 0
