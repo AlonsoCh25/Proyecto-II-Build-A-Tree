@@ -6,8 +6,18 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637417901451496428
     m_Hash: 3120423041
+=======
+<<<<<<< Updated upstream
+      ticks: 637409874810799094
+    m_Hash: 1443447981
+=======
+      ticks: 637417902877277416
+    m_Hash: 3120423041
+>>>>>>> Stashed changes
+>>>>>>> origin/Olman
   m_LockFileStatus:
     m_FilePath: C:/Users/Hewlett Packard/Desktop/Proyecto-II-Build-A-Tree/App/Test
       Project/Packages/packages-lock.json
@@ -15,8 +25,18 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637417901451506479
     m_Hash: 3930422362
+=======
+<<<<<<< Updated upstream
+      ticks: 637409875572801639
+    m_Hash: 1242021663
+=======
+      ticks: 637417902877287401
+    m_Hash: 3930422362
+>>>>>>> Stashed changes
+>>>>>>> origin/Olman
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
