@@ -27,14 +27,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Crear Plataformas
-        plataformas.Add(Instantiate(plataforma1, new Vector2((float)-11,(float)4.5),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma2, new Vector2((float)-3.5,(float)4.5),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma3, new Vector2((float)-7.5,(float)1),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma4,new Vector2((float)0.5,(float)1),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma5,new Vector2((float)-11.5,(float)-2.5),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma6,new Vector2((float)-4,(float)-2.5),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma7,new Vector2((float)-10.5,(float)-6),Quaternion.identity));
-        plataformas.Add(Instantiate(plataforma8,new Vector2((float)0,(float)-6),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma1, new Vector2((float)-13,(float)4.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma2, new Vector2((float)-5.5,(float)4.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma3, new Vector2((float)-9.5,(float)1),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma4,new Vector2((float)-1.5,(float)1),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma5,new Vector2((float)-13.5,(float)-2.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma6,new Vector2((float)-6,(float)-2.5),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma7,new Vector2((float)-12.5,(float)-6),Quaternion.identity));
+        plataformas.Add(Instantiate(plataforma8,new Vector2((float)-2,(float)-6),Quaternion.identity));
     }
 
     // Update is called once per frame

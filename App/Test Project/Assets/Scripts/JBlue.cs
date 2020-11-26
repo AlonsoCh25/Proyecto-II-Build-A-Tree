@@ -8,8 +8,10 @@ public class JBlue : MonoBehaviour
 
     public float FuezadeSalto;
 
-    private Rigidbody2D _rigidbody2D; 
-    
+    public float FuerzadeLado;
+
+    private Rigidbody2D _rigidbody2D;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,12 @@ public class JBlue : MonoBehaviour
         {
             animator.SetBool("JumpBlue", true);
             _rigidbody2D.AddForce(new Vector2(0, FuezadeSalto));
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            animator.SetBool("RunBlue", true);
+            _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
         }
     }
 }
