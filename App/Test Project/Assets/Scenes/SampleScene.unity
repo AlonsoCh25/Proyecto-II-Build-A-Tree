@@ -183,8 +183,7 @@ MonoBehaviour:
   m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
-  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4,
-    type: 2}
+  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -574,7 +573,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.407385
+  orthographic size: 8.461004
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -731,8 +730,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: aee8f19b963524a41af9bed6d0ee9ac9,
-    type: 3}
+  m_Sprite: {fileID: -6367560908665664636, guid: aee8f19b963524a41af9bed6d0ee9ac9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -802,22 +800,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPrincipal: {fileID: 1722812262}
   menuGameOver: {fileID: 1675385272}
-  plataforma1: {fileID: 5644950561826640929, guid: 6756a788bf146384ca9e5fedd4ee415d,
-    type: 3}
-  plataforma2: {fileID: 6918795363267936083, guid: 1294ac02b844e604e9dedb9e3976bdab,
-    type: 3}
-  plataforma3: {fileID: 3614172272002614374, guid: 26c5e1f938735fd41ba72df9f577354e,
-    type: 3}
-  plataforma4: {fileID: 824339204869384012, guid: d135409acfeedf84ab70c761d328aecc,
-    type: 3}
-  plataforma5: {fileID: 8450173875101265802, guid: 523e94eb81ec03d46a33c354b30b67c7,
-    type: 3}
-  plataforma6: {fileID: 3406458596775185568, guid: 42395d678166a504382c2d36fea1a5e7,
-    type: 3}
-  plataforma7: {fileID: 6565850682436083400, guid: 72234218422e3454ebd8fc7e22861b1a,
-    type: 3}
-  plataforma8: {fileID: 111020072085487550, guid: 487e65950405c8a4fb4099c14da7a955,
-    type: 3}
+  plataforma1: {fileID: 5644950561826640929, guid: 6756a788bf146384ca9e5fedd4ee415d, type: 3}
+  plataforma2: {fileID: 6918795363267936083, guid: 1294ac02b844e604e9dedb9e3976bdab, type: 3}
+  plataforma3: {fileID: 3614172272002614374, guid: 26c5e1f938735fd41ba72df9f577354e, type: 3}
+  plataforma4: {fileID: 824339204869384012, guid: d135409acfeedf84ab70c761d328aecc, type: 3}
+  plataforma5: {fileID: 8450173875101265802, guid: 523e94eb81ec03d46a33c354b30b67c7, type: 3}
+  plataforma6: {fileID: 3406458596775185568, guid: 42395d678166a504382c2d36fea1a5e7, type: 3}
+  plataforma7: {fileID: 6565850682436083400, guid: 72234218422e3454ebd8fc7e22861b1a, type: 3}
+  plataforma8: {fileID: 111020072085487550, guid: 487e65950405c8a4fb4099c14da7a955, type: 3}
   fondo: {fileID: 293063997}
   gameOver: 0
   start: 0
@@ -965,8 +955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: 0af47f3fda839cf4293a75ea4b93cb74,
-    type: 3}
+  m_Sprite: {fileID: -6367560908665664636, guid: 0af47f3fda839cf4293a75ea4b93cb74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1064,8 +1053,7 @@ MonoBehaviour:
   m_text: Pulsa X para iniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
-  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4,
-    type: 2}
+  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1199,8 +1187,7 @@ MonoBehaviour:
   m_text: Pulsa X para reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
-  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4,
-    type: 2}
+  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1508,8 +1495,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: 9079da374474e7b43ac8c2358c19eb49,
-    type: 3}
+  m_Sprite: {fileID: -6367560908665664636, guid: 9079da374474e7b43ac8c2358c19eb49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1656,8 +1642,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3083089168873209362, guid: f8e21ccfc2eb06843a0ce61bd1a93d27,
-    type: 3}
+  m_Sprite: {fileID: 3083089168873209362, guid: f8e21ccfc2eb06843a0ce61bd1a93d27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1822,8 +1807,7 @@ MonoBehaviour:
   m_text: build  a  tree
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
-  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4,
-    type: 2}
+  m_sharedMaterial: {fileID: 857562110604899859, guid: e147e59d4728c564cbe4f5dc261ed0d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
