@@ -9,6 +9,7 @@ public class JFrog : MonoBehaviour
     public float FuezadeSalto;
 
     public float FuerzadeLado;
+
     
     private Rigidbody2D _rigidbody2D;
     // Start is called before the first frame update
@@ -28,14 +29,15 @@ public class JFrog : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            animator.SetBool("RunBlue", true);
-            _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
-        }    
-        
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            animator.SetBool("RunBlue", true);
+            animator.SetBool("RunFrog", true);
             _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
         }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            animator.SetBool("RunFrogL", true);
+            _rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
+        }
+        }
+        
     }
-}
+

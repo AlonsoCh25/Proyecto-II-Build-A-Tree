@@ -6,10 +6,12 @@ using UnityEngine;
 public class JRey : MonoBehaviour
 {
     public float fuerzaSalto;
+    public GameManager gameManager;
+
     public float FuerzadeLado;
+    
     private Rigidbody2D rigidbody2D;
     private Animator animator;
-    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +30,13 @@ public class JRey : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.D))
         {
-            animator.SetBool("estaSaltando",false);
+            animator.SetBool("FuerzadeLado",false);
             rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
         } 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            animator.SetBool("FuerzadeLado",false);
-            rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
+            animator.SetBool("RunReyL",false);
+            rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
         } 
         
     }

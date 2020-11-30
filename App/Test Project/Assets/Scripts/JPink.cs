@@ -36,8 +36,8 @@ public class JPink : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.J))
         {
-            animator.SetBool("RunPink", true);
-            _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
+            animator.SetBool("RunPinkL", true);
+            _rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
         }
     }
 }

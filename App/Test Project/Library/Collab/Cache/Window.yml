@@ -14,9 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/Scripts/GameManager.cs
+    - Assets/Servidor/out/production/Servidor/Main.class
     - Assets/Servidor/out/production/Servidor/Server.class
+    - Assets/Servidor/src/Server.java
+    - Assets/Sprites/Ninja Frog/RunFrogL.png
+    - Assets/Sprites/Ninja Frog/RunFrogL.png.meta
+    - Assets/Sprites/Pink Man/RunPinkL.png
+    - Assets/Sprites/Pink Man/RunPinkL.png.meta
+    - Assets/Sprites/RunReyL.png
+    - Assets/Sprites/RunReyL.png.meta
     - 
-    m_Values: 0000
+    m_Values: 0000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531258554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c3e408e8fc94e4788116854a4bd67b, type: 3}
   m_Name: 
@@ -1063,19 +1063,12 @@ MonoBehaviour:
   PInicio2: {fileID: 0}
   PInicio3: {fileID: 0}
   PInicio4: {fileID: 0}
-  Rey: {fileID: 0}
-  Blue: {fileID: 0}
-  Pink: {fileID: 0}
-  Frog: {fileID: 0}
-  PuntajeRey: {fileID: 0}
-  PuntajeBlue: {fileID: 0}
-  PuntajePink: {fileID: 0}
-  PuntajeFrog: {fileID: 0}
   fondo: {fileID: 293063997}
   gameOver: 0
   start: 0
   plataformas: []
   personajesinicio: []
+  jblue: {fileID: 0}
 --- !u!4 &538573280
 Transform:
   m_ObjectHideFlags: 0
@@ -1328,7 +1321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843954530}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56365a836909f5c4da9171a1e7e69c89, type: 3}
   m_Name: 
@@ -3085,14 +3078,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741032014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0add7318d7218544386caf673b9e63db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FuezadeSalto: 250
   FuerzadeLado: 100
-  game_manager: {fileID: 0}
+  velocidad: 0
 --- !u!1 &1904285456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,14 +3387,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983528036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11083d5ada18fc141af471286fc78839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaSalto: 250
-  FuerzadeLado: 100
   gameManager: {fileID: 538573279}
+  FuerzadeLado: 100
 --- !u!1 &2062824709
 GameObject:
   m_ObjectHideFlags: 0
