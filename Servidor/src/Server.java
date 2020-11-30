@@ -60,7 +60,7 @@ public class Server implements Runnable{
     public void SendMessage(String OutMessage){
         try{
             OUT = new DataOutputStream(this.Client.getOutputStream());
-            OUT.writeUTF(OutMessage);
+            OUT.write(OutMessage.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -131,7 +131,6 @@ public class Server implements Runnable{
         while(isServerActive()){
             if(GetGame_Active()){
                 int a = (int) (Math.random()*4 +1);
-                System.out.println(a);
                 try {
                     sleep(5000);
                 } catch (InterruptedException e) {
@@ -139,16 +138,16 @@ public class Server implements Runnable{
                 }
                 switch (a){
                     case 1:
-                        SendMessage("Force_Push");
+                        SendMessage("force_push");
                         break;
                     case 2:
-                        SendMessage("Shield");
+                        SendMessage("shield");
                         break;
                     case 3:
-                        SendMessage("Air-Jump");
+                        SendMessage("air-jump");
                         break;
                     case 4:
-                        SendMessage("C_BTS");
+                        SendMessage("c_bts");
                         break;
                 }
             }
