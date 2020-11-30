@@ -19,7 +19,6 @@ public class Client : MonoBehaviour
         this.socket = null;
         this.direction = null;
     }
-
     public void setMessage(string message)
     {
         this.message = message;

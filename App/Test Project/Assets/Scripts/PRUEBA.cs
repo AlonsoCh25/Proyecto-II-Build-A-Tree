@@ -8,14 +8,13 @@ public class PRUEBA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Inicia el cliente
         client.Connect();
-        Thread t = new Thread(new ThreadStart(client.ReceiveMessage));;
-        t.Start();
-        client.SendMessage("HOLA ALEX");
+        Thread t_client = new Thread(new ThreadStart(client.ReceiveMessage));
+        t_client.Start();
     }
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

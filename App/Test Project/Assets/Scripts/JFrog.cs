@@ -31,5 +31,11 @@ public class JFrog : MonoBehaviour
             animator.SetBool("RunBlue", true);
             _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
         }    
+        
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            animator.SetBool("RunBlue", true);
+            _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
+        }
     }
 }
