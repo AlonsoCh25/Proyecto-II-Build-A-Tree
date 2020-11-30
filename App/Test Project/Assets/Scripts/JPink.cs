@@ -9,6 +9,8 @@ public class JPink : MonoBehaviour
     public float FuezadeSalto;
 
     public float FuerzadeLado;
+
+    public float FuerzadeAtaque;
     
     private Rigidbody2D _rigidbody2D;
     // Start is called before the first frame update
@@ -38,6 +40,11 @@ public class JPink : MonoBehaviour
         {
             animator.SetBool("RunPinkL", true);
             _rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            animator.SetBool("HitPink", true);
+            _rigidbody2D.AddForce(new Vector2(0, FuerzadeAtaque));
         }
     }
 }

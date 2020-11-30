@@ -10,7 +10,7 @@ public class JBlue : MonoBehaviour
 
     public float FuerzadeLado;
 
-    public float velocidad;
+    public float FuerzadeAtaque;
     
 
     private Rigidbody2D _rigidbody2D;
@@ -38,9 +38,11 @@ public class JBlue : MonoBehaviour
         {
             animator.SetBool("RunBlueL", true);
             _rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
-            
-            
-            
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            animator.SetBool("HitBlue", true);
+            _rigidbody2D.AddForce(new Vector2(0, FuerzadeAtaque));
         }
     }
 }

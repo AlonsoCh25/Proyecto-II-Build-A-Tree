@@ -2,8 +2,6 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.sql.SQLOutput;
-
 import static java.lang.Thread.sleep;
 
 public class Server implements Runnable{
@@ -107,17 +105,18 @@ public class Server implements Runnable{
                 System.out.println(e);
             }
         }
+        Thread event = new Thread(this::Eventos);
+        event.start();
+        Thread event_s = new Thread(this::Eventos_Secundarios);
+        event_s.start();
         while (isServerActive()){
-            Thread event = new Thread(this::Eventos);
-            event.start();
-            Thread event_s = new Thread(this::Eventos_Secundarios);
-            event_s.start();
             try{
                 IN = new DataInputStream(this.Client.getInputStream());
                 int length = 100; //Largo maximo del mensaje
                 byte[] message = new byte[length];
                 IN.read(message);
                 String m = ParseString(parseByte(message));
+                System.out.println(m);
                 switch (m){
                     //CASOS DE LOS MENSAJES QUE RECIBE
                     case "Active":
@@ -132,6 +131,7 @@ public class Server implements Runnable{
         while(isServerActive()){
             if(GetGame_Active()){
                 int a = (int) (Math.random()*4 +1);
+                System.out.println(a);
                 try {
                     sleep(5000);
                 } catch (InterruptedException e) {
@@ -140,23 +140,22 @@ public class Server implements Runnable{
                 switch (a){
                     case 1:
                         SendMessage("Force_Push");
+                        break;
                     case 2:
                         SendMessage("Shield");
+                        break;
                     case 3:
                         SendMessage("Air-Jump");
+                        break;
                     case 4:
                         SendMessage("C_BTS");
+                        break;
                 }
             }
         }
     }
     public void Eventos_Secundarios(){
         while (isServerActive()){
-            try {
-                sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             if (GetGame_Active()){
                 if(GetBTS()){
 
