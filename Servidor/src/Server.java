@@ -105,10 +105,11 @@ public class Server implements Runnable{
                 System.out.println(e);
             }
         }
+
         Thread event = new Thread(this::Eventos);
-        event.start();
+        //event.start();
         Thread event_s = new Thread(this::Eventos_Secundarios);
-        event_s.start();
+        //event_s.start();
         while (isServerActive()){
             try{
                 IN = new DataInputStream(this.Client.getInputStream());
