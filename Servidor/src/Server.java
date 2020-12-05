@@ -20,6 +20,8 @@ public class Server implements Runnable{
     private boolean Game_Active;
     private boolean C_circulo;
     private boolean C_cuadrado;
+    private boolean C_rombo;
+    private boolean C_triangulo;
 
     public Server(){
         this.port = 1000;
@@ -49,6 +51,18 @@ public class Server implements Runnable{
     }
     public boolean GetC_cuadrado(){
         return this.C_cuadrado;
+    }
+    public void SetC_rombo(boolean c_rombo){
+        this.C_rombo = c_rombo;
+    }
+    public boolean GetC_rombo(){
+        return this.C_rombo;
+    }
+    public void SetC_triangulo(boolean c_triangulo){
+        this.C_triangulo = c_triangulo;
+    }
+    public boolean GetC_triangulo(){
+        return this.C_triangulo;
     }
     public boolean GetBTS(){
         return this.BTS;
@@ -129,6 +143,10 @@ public class Server implements Runnable{
         event_circulo.start();
         Thread event_cuadrado = new Thread(this::Eventos_Cuadrado);
         event_cuadrado.start();
+        Thread event_rombo = new Thread(this::Eventos_Rombo);
+        event_rombo.start();
+        Thread event_triangulo = new Thread(this::Eventos_Triangulo);
+        event_triangulo.start();
         while (true){
             try{
                 IN = new DataInputStream(this.Client.getInputStream());
@@ -147,6 +165,12 @@ public class Server implements Runnable{
                     case "Active_C_cuadrado":
                         SetC_cuadrado(true);
                         break;
+                    case "Active_C_rombo":
+                        SetC_rombo(true);
+                        break;
+                    case "Active_C_triangulo":
+                        SetC_triangulo(true);
+                        break;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -158,10 +182,9 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
             if(GetGame_Active()) {
-                //int a = (int) (Math.random()*6 +1);
-                int a = 6;
+                int a = (int) (Math.random()*6 +1);
                 try {
-                    sleep(3000);
+                    sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -177,16 +200,25 @@ public class Server implements Runnable{
                         SendMessage("air-jump");
                         break;
                     case 4:
-                        SendMessage("c_bts");
+                        if (!GetC_rombo()) {
+                            SendMessage("c_bts");
+                        }
                         break;
                     case 5:
                         if(!GetC_circulo()){
                             SendMessage("c_avl");
                         }
+                        break;
                     case 6:
                         if(!GetC_cuadrado()){
                             SendMessage("c_btree");
                         }
+                        break;
+                    case 7:
+                        if (!GetC_triangulo()){
+                            SendMessage("c_splay");
+                        }
+                        break;
                 }
             }
         }
@@ -200,7 +232,7 @@ public class Server implements Runnable{
             if(GetC_circulo()) {
                 int a = (int) (Math.random()*8 +1);
                 try {
-                    sleep(1000);
+                    sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -259,7 +291,7 @@ public class Server implements Runnable{
             if(GetC_cuadrado()) {
                 int a = (int) (Math.random()*7 +1);
                 try {
-                    sleep(2000);
+                    sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -305,6 +337,120 @@ public class Server implements Runnable{
             }
         }
     }
+
+
+    public void Eventos_Rombo(){
+        while(true){
+            System.out.println(GetGame_Active());
+            System.out.println(GetC_cuadrado());
+            if(GetC_rombo()) {
+                int a = (int) (Math.random()*8 +1);
+                try {
+                    sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(a);
+                switch (a){
+                    case 1:
+                        if(GetC_rombo()){
+                            SendMessage("R_34");
+                        }
+                        break;
+                    case 2:
+                        if(GetC_rombo()){
+                            SendMessage("R_36");
+                        }
+                        break;
+                    case 3:
+                        if(GetC_rombo()){
+                            SendMessage("R_38");
+                        }
+                        break;
+                    case 4:
+                        if(GetC_rombo()){
+                            SendMessage("R_39");
+                        }
+                        break;
+                    case 5:
+                        if(GetC_rombo()){
+                            SendMessage("R_44");
+                        }
+                        break;
+                    case 6:
+                        if(GetC_rombo()){
+                            SendMessage("R_50");
+                        }
+                        break;
+                    case 7:
+                        if(GetC_rombo()){
+                            SendMessage("R_69");
+                        }
+                        break;
+                    case 8:
+                        if(GetC_rombo()){
+                            SendMessage("R_91");
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
+
+    public void Eventos_Triangulo(){
+        while(true){
+            System.out.println(GetGame_Active());
+            System.out.println(GetC_cuadrado());
+            if(GetC_triangulo()) {
+                int a = (int) (Math.random()*7 +1);
+                try {
+                    sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(a);
+                switch (a){
+                    case 1:
+                        if(GetC_triangulo()){
+                            SendMessage("T_11");
+                        }
+                        break;
+                    case 2:
+                        if(GetC_triangulo()){
+                            SendMessage("T_12");
+                        }
+                        break;
+                    case 3:
+                        if(GetC_triangulo()){
+                            SendMessage("T_15");
+                        }
+                        break;
+                    case 4:
+                        if(GetC_triangulo()){
+                            SendMessage("T_44");
+                        }
+                        break;
+                    case 5:
+                        if(GetC_triangulo()){
+                            SendMessage("T_55");
+                        }
+                        break;
+                    case 6:
+                        if(GetC_triangulo()){
+                            SendMessage("T_59");
+                        }
+                        break;
+                    case 7:
+                        if(GetC_triangulo()){
+                            SendMessage("T_70");
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
 
 
     public void Eventos_Secundarios(){
