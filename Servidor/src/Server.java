@@ -19,6 +19,8 @@ public class Server implements Runnable{
     private boolean Splay;
     private boolean Game_Active;
     private boolean C_circulo;
+    private boolean C_cuadrado;
+
     public Server(){
         this.port = 1000;
         this.Server = null;
@@ -41,6 +43,12 @@ public class Server implements Runnable{
     }
     public boolean GetC_circulo(){
         return this.C_circulo;
+    }
+    public void SetC_cuadrado(boolean c_cuadrado){
+        this.C_cuadrado = c_cuadrado;
+    }
+    public boolean GetC_cuadrado(){
+        return this.C_cuadrado;
     }
     public boolean GetBTS(){
         return this.BTS;
@@ -117,6 +125,10 @@ public class Server implements Runnable{
         event.start();
         Thread event_s = new Thread(this::Eventos_Secundarios);
         event_s.start();
+        Thread event_circulo = new Thread(this::Eventos_Circulo);
+        event_circulo.start();
+        Thread event_cuadrado = new Thread(this::Eventos_Cuadrado);
+        event_cuadrado.start();
         while (true){
             try{
                 IN = new DataInputStream(this.Client.getInputStream());
@@ -132,6 +144,9 @@ public class Server implements Runnable{
                     case "Active_C_circulo":
                         SetC_circulo(true);
                         break;
+                    case "Active_C_cuadrado":
+                        SetC_cuadrado(true);
+                        break;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -143,7 +158,8 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
             if(GetGame_Active()) {
-                int a = (int) (Math.random()*13 +1);
+                //int a = (int) (Math.random()*6 +1);
+                int a = 6;
                 try {
                     sleep(3000);
                 } catch (InterruptedException e) {
@@ -167,43 +183,65 @@ public class Server implements Runnable{
                         if(!GetC_circulo()){
                             SendMessage("c_avl");
                         }
-                        break;
                     case 6:
+                        if(!GetC_cuadrado()){
+                            SendMessage("c_btree");
+                        }
+                }
+            }
+        }
+    }
+
+
+    public void Eventos_Circulo(){
+        while(true){
+            System.out.println(GetGame_Active());
+            System.out.println(GetC_circulo());
+            if(GetC_circulo()) {
+                int a = (int) (Math.random()*8 +1);
+                try {
+                    sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(a);
+                switch (a){
+                    case 1:
                         if(GetC_circulo()){
                             SendMessage("C_15");
                         }
                         break;
-                    case 7:
+                    case 2:
                         if(GetC_circulo()){
                             SendMessage("C_6");
                         }
                         break;
-                    case 8:
+                    case 3:
                         if(GetC_circulo()){
                             SendMessage("C_7");
                         }
                         break;
-                    case 9:
+                    case 4:
                         if(GetC_circulo()){
                             SendMessage("C_4");
                         }
                         break;
-                    case 10:
+                    case 5:
                         if(GetC_circulo()){
                             SendMessage("C_5");
                         }
                         break;
-                    case 11:
+                    case 6:
                         if(GetC_circulo()){
                             SendMessage("C_23");
                         }
                         break;
-                    case 12:
+                    case 7:
                         if(GetC_circulo()){
                             SendMessage("C_50");
                         }
                         break;
-                    case 13:
+                    case 8:
                         if(GetC_circulo()){
                             SendMessage("C_71");
                         }
@@ -212,6 +250,63 @@ public class Server implements Runnable{
             }
         }
     }
+
+
+    public void Eventos_Cuadrado(){
+        while(true){
+            System.out.println(GetGame_Active());
+            System.out.println(GetC_cuadrado());
+            if(GetC_cuadrado()) {
+                int a = (int) (Math.random()*7 +1);
+                try {
+                    sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(a);
+                switch (a){
+                    case 1:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_21");
+                        }
+                        break;
+                    case 2:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_23");
+                        }
+                        break;
+                    case 3:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_44");
+                        }
+                        break;
+                    case 4:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_45");
+                        }
+                        break;
+                    case 5:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_55");
+                        }
+                        break;
+                    case 6:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_58");
+                        }
+                        break;
+                    case 7:
+                        if(GetC_cuadrado()){
+                            SendMessage("Cu_77");
+                        }
+                        break;
+
+                }
+            }
+        }
+    }
+
+
     public void Eventos_Secundarios(){
         while (isServerActive()){
             if (GetGame_Active()){
