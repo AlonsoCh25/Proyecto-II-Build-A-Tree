@@ -134,8 +134,10 @@ public class Server implements Runnable{
                 System.out.println(e);
             }
         }
-        Thread event = new Thread(this::Eventos);
-        event.start();
+        Thread event_poderes = new Thread(this::Eventos_poderes);
+        event_poderes.start();
+        Thread event_arboles = new Thread(this::Eventos_arboles);
+        event_arboles.start();
         Thread event_s = new Thread(this::Eventos_Secundarios);
         event_s.start();
         Thread event_circulo = new Thread(this::Eventos_Circulo);
@@ -176,13 +178,12 @@ public class Server implements Runnable{
             }
         }
     }
-    public void Eventos(){
+    public void Eventos_poderes(){
         while(true){
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
             if(GetGame_Active()) {
-                //int a = 5;
-                int a = (int) (Math.random()*6 +1);
+                int a = (int) (Math.random()*3 +1);
                 try {
                     sleep(10000);
                 } catch (InterruptedException e) {
@@ -199,22 +200,40 @@ public class Server implements Runnable{
                     case 3:
                         SendMessage("air-jump");
                         break;
-                    case 4:
+                }
+            }
+        }
+    }
+
+    public void Eventos_arboles(){
+        while(true){
+            System.out.println(GetGame_Active());
+            System.out.println(GetC_circulo());
+            if(GetGame_Active()) {
+                int a = (int) (Math.random()*4 +1);
+                try {
+                    sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(a);
+                switch (a){
+                    case 1:
                         if (!GetC_rombo()) {
                             SendMessage("c_bts");
                         }
                         break;
-                    case 5:
+                    case 2:
                         if(!GetC_circulo()){
                             SendMessage("c_avl");
                         }
                         break;
-                    case 6:
+                    case 3:
                         if(!GetC_cuadrado()){
                             SendMessage("c_btree");
                         }
                         break;
-                    case 7:
+                    case 4:
                         if (!GetC_triangulo()){
                             SendMessage("c_splay");
                         }
@@ -223,12 +242,13 @@ public class Server implements Runnable{
             }
         }
     }
+
     public void Eventos_Circulo(){
         while(true){
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
             if(GetC_circulo()) {
-                for(int i = 1; i<8; i++){
+                for(int i = 1; i<=8; i++){
                     try {
                         sleep(5000);
                     } catch (InterruptedException e) {
@@ -286,51 +306,53 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             if(GetC_cuadrado()) {
-                int a = (int) (Math.random()*7 +1);
-                try {
-                    sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(a);
-                switch (a){
-                    case 1:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_21");
-                        }
-                        break;
-                    case 2:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_23");
-                        }
-                        break;
-                    case 3:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_44");
-                        }
-                        break;
-                    case 4:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_45");
-                        }
-                        break;
-                    case 5:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_55");
-                        }
-                        break;
-                    case 6:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_58");
-                        }
-                        break;
-                    case 7:
-                        if(GetC_cuadrado()){
-                            SendMessage("Cu_77");
-                        }
-                        break;
+                for(int i = 1; i<=8; i++){
+                    try {
+                        sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(i);
+                    switch (i){
+                        case 1:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_21");
+                            }
+                            break;
+                        case 2:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_23");
+                            }
+                            break;
+                        case 3:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_44");
+                            }
+                            break;
+                        case 4:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_45");
+                            }
+                            break;
+                        case 5:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_55");
+                            }
+                            break;
+                        case 6:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_58");
+                            }
+                            break;
+                        case 7:
+                            if(GetC_cuadrado()){
+                                SendMessage("Cu_77");
+                            }
+                            break;
 
+                    }
                 }
+
             }
         }
     }
@@ -339,55 +361,57 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             if(GetC_rombo()) {
-                int a = (int) (Math.random()*8 +1);
-                try {
-                    sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                for(int i = 1; i<=8; i++){
+                    try {
+                        sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(i);
+                    switch (i){
+                        case 1:
+                            if(GetC_rombo()){
+                                SendMessage("R_34");
+                            }
+                            break;
+                        case 2:
+                            if(GetC_rombo()){
+                                SendMessage("R_36");
+                            }
+                            break;
+                        case 3:
+                            if(GetC_rombo()){
+                                SendMessage("R_38");
+                            }
+                            break;
+                        case 4:
+                            if(GetC_rombo()){
+                                SendMessage("R_39");
+                            }
+                            break;
+                        case 5:
+                            if(GetC_rombo()){
+                                SendMessage("R_44");
+                            }
+                            break;
+                        case 6:
+                            if(GetC_rombo()){
+                                SendMessage("R_50");
+                            }
+                            break;
+                        case 7:
+                            if(GetC_rombo()){
+                                SendMessage("R_69");
+                            }
+                            break;
+                        case 8:
+                            if(GetC_rombo()){
+                                SendMessage("R_91");
+                            }
+                            break;
+                    }
                 }
-                System.out.println(a);
-                switch (a){
-                    case 1:
-                        if(GetC_rombo()){
-                            SendMessage("R_34");
-                        }
-                        break;
-                    case 2:
-                        if(GetC_rombo()){
-                            SendMessage("R_36");
-                        }
-                        break;
-                    case 3:
-                        if(GetC_rombo()){
-                            SendMessage("R_38");
-                        }
-                        break;
-                    case 4:
-                        if(GetC_rombo()){
-                            SendMessage("R_39");
-                        }
-                        break;
-                    case 5:
-                        if(GetC_rombo()){
-                            SendMessage("R_44");
-                        }
-                        break;
-                    case 6:
-                        if(GetC_rombo()){
-                            SendMessage("R_50");
-                        }
-                        break;
-                    case 7:
-                        if(GetC_rombo()){
-                            SendMessage("R_69");
-                        }
-                        break;
-                    case 8:
-                        if(GetC_rombo()){
-                            SendMessage("R_91");
-                        }
-                        break;
-                }
+
             }
         }
     }
@@ -396,49 +420,50 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             if(GetC_triangulo()) {
-                int a = (int) (Math.random()*7 +1);
-                try {
-                    sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(a);
-                switch (a){
-                    case 1:
-                        if(GetC_triangulo()){
-                            SendMessage("T_11");
-                        }
-                        break;
-                    case 2:
-                        if(GetC_triangulo()){
-                            SendMessage("T_12");
-                        }
-                        break;
-                    case 3:
-                        if(GetC_triangulo()){
-                            SendMessage("T_15");
-                        }
-                        break;
-                    case 4:
-                        if(GetC_triangulo()){
-                            SendMessage("T_44");
-                        }
-                        break;
-                    case 5:
-                        if(GetC_triangulo()){
-                            SendMessage("T_55");
-                        }
-                        break;
-                    case 6:
-                        if(GetC_triangulo()){
-                            SendMessage("T_59");
-                        }
-                        break;
-                    case 7:
-                        if(GetC_triangulo()){
-                            SendMessage("T_70");
-                        }
-                        break;
+                for(int i = 1; i<=7; i++){
+                    try {
+                        sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(i);
+                    switch (i){
+                        case 1:
+                            if(GetC_triangulo()){
+                                SendMessage("T_11");
+                            }
+                            break;
+                        case 2:
+                            if(GetC_triangulo()){
+                                SendMessage("T_12");
+                            }
+                            break;
+                        case 3:
+                            if(GetC_triangulo()){
+                                SendMessage("T_15");
+                            }
+                            break;
+                        case 4:
+                            if(GetC_triangulo()){
+                                SendMessage("T_44");
+                            }
+                            break;
+                        case 5:
+                            if(GetC_triangulo()){
+                                SendMessage("T_55");
+                            }
+                            break;
+                        case 6:
+                            if(GetC_triangulo()){
+                                SendMessage("T_59");
+                            }
+                            break;
+                        case 7:
+                            if(GetC_triangulo()){
+                                SendMessage("T_70");
+                            }
+                            break;
+                    }
                 }
             }
         }
