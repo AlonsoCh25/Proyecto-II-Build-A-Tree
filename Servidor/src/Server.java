@@ -160,6 +160,9 @@ public class Server implements Runnable{
                     case "Active":
                         setGame_Active(true);
                         break;
+                    case "InActive":
+                        setGame_Active(false);
+                        break;
                     case "Active_C_circulo":
                         SetC_circulo(true);
                         break;
@@ -171,6 +174,18 @@ public class Server implements Runnable{
                         break;
                     case "Active_C_triangulo":
                         SetC_triangulo(true);
+                        break;
+                    case "Completo_C":
+                        SetC_circulo(false);
+                        break;
+                    case "Completo_Cu":
+                        SetC_cuadrado(false);
+                        break;
+                    case "Completo_R":
+                        SetC_rombo(false);
+                        break;
+                    case "Completo_T":
+                        SetC_triangulo(false);
                         break;
                 }
             } catch (Exception e) {
@@ -221,21 +236,25 @@ public class Server implements Runnable{
                     case 1:
                         if (!GetC_rombo()) {
                             SendMessage("c_bts");
+                            break;
                         }
                         break;
                     case 2:
                         if(!GetC_circulo()){
                             SendMessage("c_avl");
+                            break;
                         }
                         break;
                     case 3:
                         if(!GetC_cuadrado()){
                             SendMessage("c_btree");
+                            break;
                         }
                         break;
                     case 4:
                         if (!GetC_triangulo()){
                             SendMessage("c_splay");
+                            break;
                         }
                         break;
                 }
@@ -247,7 +266,7 @@ public class Server implements Runnable{
         while(true){
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
-            if(GetC_circulo()) {
+            if(GetC_circulo() && GetGame_Active()) {
                 for(int i = 1; i<=8; i++){
                     try {
                         sleep(5000);
@@ -305,7 +324,7 @@ public class Server implements Runnable{
         while(true){
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
-            if(GetC_cuadrado()) {
+            if(GetC_cuadrado() && GetGame_Active()) {
                 for(int i = 1; i<=8; i++){
                     try {
                         sleep(5000);
@@ -360,7 +379,7 @@ public class Server implements Runnable{
         while(true){
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
-            if(GetC_rombo()) {
+            if(GetC_rombo() && GetGame_Active()) {
                 for(int i = 1; i<=8; i++){
                     try {
                         sleep(5000);
@@ -419,7 +438,7 @@ public class Server implements Runnable{
         while(true){
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
-            if(GetC_triangulo()) {
+            if(GetC_triangulo() && GetGame_Active()) {
                 for(int i = 1; i<=7; i++){
                     try {
                         sleep(5000);
