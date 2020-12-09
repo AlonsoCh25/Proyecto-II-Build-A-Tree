@@ -1,22 +1,32 @@
 public class BTS {
     Node root;
+    Node last;
     public BTS(){
         this.root = null;
     }
     public boolean isEmpty(){
         return this.root == null;
     }
-    //busca minimo
+    public Node Findmax(Node node){
+        if(isEmpty()){
+            return null;
+        }else{
+            return this.findmax(node);
+        }
+    }
     public Node FindMax(){
         if(isEmpty()){
             return null;
         }else{
-            return this.findmax();
+            return this.findmax(null);
         }
     }
-    private Node findmax(){
+    private Node findmax(Node no){
         Node node = null;
         Node current = this.root;
+        if(no!=null){
+            current = no;
+        }
         if(current.getRight() == null){
             node = current;
         }else{
@@ -28,17 +38,26 @@ public class BTS {
         }
         return node;
     }
+    public Node Findmin(Node node){
+        if(isEmpty()){
+            return null;
+        }else{
+            return this.findmin(node);
+        }
+    }
     public Node FindMin(){
         if(isEmpty()){
             return null;
         }else{
-            return this.findmin();
+            return this.findmin(null);
         }
     }
-    //busca maximo
-    private Node findmin(){
+    private Node findmin(Node no){
         Node node = null;
         Node current = this.root;
+        if(no!=null){
+            current = no;
+        }
         if(current.getLeft() == null){
             node = current;
         }else{
@@ -72,26 +91,57 @@ public class BTS {
         }
     }
     public void Delete(Object data){
-        this.delete(data);
+        this.delete(data, this.root);
     }
-    private void delete(Object data){
+    private void delete(Object data, Node no){
         if(!isEmpty()){
-            Node current = this.root;
-            if(current.getRight() != null && current.getLeft() != null){
-                Node r = this.root.getRight();
-                Node l = this.root.getLeft();
-                this.root = FindMax();
-            }
-            if(current.getRight() == null && current.getLeft() != null){
+            Node current = no;
+            if(current.getData() == data){
+                if(current.getRight() != null && current.getLeft() != null){
+                    Node r = current.getRight();
+                    Node l = current.getLeft();
+                    current = Findmin(r);
+                    current.setRight(r);
+                    current.setLeft(l);
+                    this.delete(current.getData(), current.getRight());
+                }
+                if(current.getRight() == null && current.getLeft() != null){
+                    current = current.getLeft();
+                    this.delete(current.getData(), current.getLeft());
+                }
+                if(current.getRight() != null && current.getLeft() == null){
+                    Node r = current.getRight();
+                    Node l = current.getLeft();
+                    current = Findmin(r);
+                    current.setRight(r);
+                    current.setLeft(l);
+                    this.delete(current.getData(), current.getRight());
+                }
+                if(current.getRight() == null && current.getLeft() == null){
+                    if(this.last!=null){
+                        if(this.last.getRight() == current){
+                            this.last.setRight(null);
+                            this.last = null;
+                        }else{
+                            this.last.setLeft(null);
+                            this.last = null;
+                        }
+                    }else{
+                        this.root = null;
+                    }
 
+                    current = null;
+                }
             }
-            if(current.getRight() != null && current.getLeft() == null){
-
+            if(current != null){
+                if((int)data > (int)current.getData()){
+                    this.last = current;
+                    this.delete(data, current.getRight());
+                }else{
+                    this.last = current;
+                    this.delete(data, current.getLeft());
+                }
             }
-            if(current.getRight() == null && current.getLeft() == null){
-
-            }
-
         }
     }
 }
