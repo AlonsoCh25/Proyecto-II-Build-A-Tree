@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class JFrog : MonoBehaviour
 {
-    private Animator animator;
-
-    public float FuezadeSalto;
-
-    public float FuerzadeLado;
-
-    public float FuerzadeAtaque;
-
-    private Rigidbody2D _rigidbody2D;
+    //Variables para movimiento 
+    public float runFrog = 2;
+    public float JumpFog = 3;
+    private Rigidbody2D rigidbody2D;
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D
     }
 
     // Update is called once per frame

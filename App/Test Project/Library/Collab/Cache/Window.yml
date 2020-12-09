@@ -14,9 +14,95 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scripts/JBlue.cs
+    - .collabignore
+    - Assets/Animaciones/Blue.controller
+    - Assets/Animaciones/Blue.controller.meta
+    - Assets/Animaciones/CorrerReyL.anim
+    - Assets/Animaciones/CorrerReyL.anim.meta
+    - Assets/Animaciones/DobleJump.anim
+    - Assets/Animaciones/DobleJump.anim.meta
+    - Assets/Animaciones/DoubleJumpFrog.anim
+    - Assets/Animaciones/DoubleJumpFrog.anim.meta
+    - Assets/Animaciones/DoubleJumpPink.anim
+    - Assets/Animaciones/DoubleJumpPink.anim.meta
+    - Assets/Animaciones/Frog.controller
+    - Assets/Animaciones/Frog.controller.meta
+    - Assets/Animaciones/HitBlue.anim
+    - Assets/Animaciones/HitBlue.anim.meta
+    - Assets/Animaciones/HitFrog.anim
+    - Assets/Animaciones/HitFrog.anim.meta
+    - Assets/Animaciones/HitPink.anim
+    - Assets/Animaciones/HitPink.anim.meta
+    - Assets/Animaciones/JumpBlue.anim
+    - Assets/Animaciones/JumpBlue.anim.meta
+    - Assets/Animaciones/JumpFrog.anim
+    - Assets/Animaciones/JumpFrog.anim.meta
+    - Assets/Animaciones/JumpPink.anim
+    - Assets/Animaciones/JumpPink.anim.meta
+    - Assets/Animaciones/Pink.controller
+    - Assets/Animaciones/Pink.controller.meta
+    - Assets/Animaciones/Rey.controller
+    - Assets/Animaciones/RunBlue.anim
+    - Assets/Animaciones/RunBlue.anim.meta
+    - Assets/Animaciones/RunBlueL.anim
+    - Assets/Animaciones/RunBlueL.anim.meta
+    - Assets/Animaciones/RunFrog.anim
+    - Assets/Animaciones/RunFrog.anim.meta
+    - Assets/Animaciones/RunFrogL.anim
+    - Assets/Animaciones/RunFrogL.anim.meta
+    - Assets/Animaciones/RunPink.anim
+    - Assets/Animaciones/RunPink.anim.meta
+    - Assets/Animaciones/RunPinkL.anim
+    - Assets/Animaciones/RunPinkL.anim.meta
+    - Assets/Animaciones/StateBlue.anim
+    - Assets/Animaciones/StateBlue.anim.meta
+    - Assets/Animaciones/StateFrog.anim
+    - Assets/Animaciones/StateFrog.anim.meta
+    - Assets/Animaciones/StatePink.anim
+    - Assets/Animaciones/StatePink.anim.meta
+    - Assets/Scenes/SampleScene.unity
+    - Assets/Score.prefab
+    - Assets/Score.prefab.meta
+    - Assets/Servidor.meta
+    - Assets/Servidor/out.meta
+    - Assets/Servidor/out/production.meta
+    - Assets/Servidor/out/production/Servidor.meta
+    - Assets/Servidor/out/production/Servidor/Server.class.meta
+    - Assets/Sprites Blue.prefab
+    - Assets/Sprites Blue.prefab.meta
+    - Assets/Sprites Frog.prefab
+    - Assets/Sprites Frog.prefab.meta
+    - Assets/Sprites Pink.prefab
+    - Assets/Sprites Pink.prefab.meta
+    - Assets/Sprites Rey.prefab
+    - Assets/Sprites Rey.prefab.meta
+    - Assets/Sprites/BG.png.meta
+    - Assets/Sprites/Cristales.meta
+    - Assets/Sprites/Cristales/Circulo.png.meta
+    - Assets/Sprites/Cristales/Circulo.prefab
+    - Assets/Sprites/Cristales/Circulo.prefab.meta
+    - Assets/Sprites/Cristales/Cuadrado 1.prefab
+    - Assets/Sprites/Cristales/Cuadrado 1.prefab.meta
+    - Assets/Sprites/Cristales/Cuadrado.png.meta
+    - Assets/Sprites/Cristales/Cuadrado.prefab
+    - Assets/Sprites/Cristales/Cuadrado.prefab.meta
+    - Assets/Sprites/Cristales/Rombo.png.meta
+    - Assets/Sprites/Cristales/Rombo.prefab
+    - Assets/Sprites/Cristales/Rombo.prefab.meta
+    - Assets/Sprites/Cristales/Triangulo.png.meta
+    - Assets/Sprites/Cristales/Triangulo.prefab
+    - Assets/Sprites/Cristales/Triangulo.prefab.meta
+    - Assets/Sprites/Materials/BG 1.mat
+    - Assets/Sprites/Ninja Frog/RunFrogL.png.meta
+    - Assets/Sprites/Pink Man/RunPinkL.png.meta
+    - Assets/Sprites/RunReyL.png.meta
+    - Assets/Sprites/Virtual Guy/Run Izquierda (32x32).png.meta
+    - Assets/Sprites/Virtual Guy/RunL (32x32).png.meta
+    - Assets/TextMesh Pro/Examples & Extras/Materials/Ground - Logo Scene.mat
+    - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/UnityConnectSettings.asset
     - 
-    m_Values: 0000
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

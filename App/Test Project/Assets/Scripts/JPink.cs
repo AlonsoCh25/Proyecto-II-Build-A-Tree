@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,10 @@ public class JPink : MonoBehaviour
     public float FuerzadeLado;
 
     public float FuerzadeAtaque;
+
+    public GameManager gameManager;
+
+    public int puntajepink = 0;
     
     private Rigidbody2D _rigidbody2D;
     // Start is called before the first frame update
@@ -41,10 +46,15 @@ public class JPink : MonoBehaviour
             animator.SetBool("RunPinkL", true);
             _rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             animator.SetBool("HitPink", true);
             _rigidbody2D.AddForce(new Vector2(0, FuerzadeAtaque));
+        }
+        if (puntajepink >= 0)
+        {
+            puntajepink += 1;
+            gameManager.PuntajePink.text = puntajepink.ToString();   
         }
     }
 }

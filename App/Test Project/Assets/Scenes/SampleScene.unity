@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531258554}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c3e408e8fc94e4788116854a4bd67b, type: 3}
   m_Name: 
@@ -1017,6 +1017,8 @@ MonoBehaviour:
   FuezadeSalto: 250
   FuerzadeLado: 100
   FuerzadeAtaque: 1
+  gameManager: {fileID: 538573279}
+  puntajefrog: 0
 --- !u!1 &538573278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,12 +1083,17 @@ MonoBehaviour:
   PInicio2: {fileID: 0}
   PInicio3: {fileID: 0}
   PInicio4: {fileID: 0}
+  PuntajeRey: {fileID: 784177266}
+  PuntajeBlue: {fileID: 1633188787}
+  PuntajePink: {fileID: 1980993345}
+  PuntajeFrog: {fileID: 1626913569}
   fondo: {fileID: 293063997}
   gameOver: 0
   start: 0
   plataformas: []
   personajesinicio: []
   jblue: {fileID: 0}
+  Message: 
 --- !u!4 &538573280
 Transform:
   m_ObjectHideFlags: 0
@@ -1180,6 +1187,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645121225}
   m_CullTransparentMesh: 1
+--- !u!114 &784177266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2627112076591304685, guid: 6c5740f818cbdcc419ed2850730e1445,
+    type: 3}
+  m_PrefabInstance: {fileID: 1585385725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &843954530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843954530}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56365a836909f5c4da9171a1e7e69c89, type: 3}
   m_Name: 
@@ -1348,6 +1367,8 @@ MonoBehaviour:
   FuezadeSalto: 250
   FuerzadeLado: 100
   FuerzadeAtaque: 1
+  gameManager: {fileID: 538573279}
+  puntajepink: 0
 --- !u!1 &883231198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,6 +2741,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594684526}
   m_CullTransparentMesh: 1
+--- !u!114 &1626913569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8716456489240980349, guid: 6c5740f818cbdcc419ed2850730e1445,
+    type: 3}
+  m_PrefabInstance: {fileID: 1585385725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1632890200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,6 +2836,18 @@ Transform:
   m_Father: {fileID: 1722812263}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1633188787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7766281940284324835, guid: 6c5740f818cbdcc419ed2850730e1445,
+    type: 3}
+  m_PrefabInstance: {fileID: 1585385725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675385272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,7 +3170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741032014}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0add7318d7218544386caf673b9e63db, type: 3}
   m_Name: 
@@ -3133,6 +3178,8 @@ MonoBehaviour:
   FuezadeSalto: 250
   FuerzadeLado: 100
   FuerzadeAtaque: 1
+  gameManager: {fileID: 538573279}
+  puntajeblue: 0
 --- !u!1 &1904285456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,6 +3322,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904285456}
   m_CullTransparentMesh: 1
+--- !u!114 &1980993345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 987660606712652319, guid: 6c5740f818cbdcc419ed2850730e1445,
+    type: 3}
+  m_PrefabInstance: {fileID: 1585385725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983528036
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,13 +3494,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983528036}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11083d5ada18fc141af471286fc78839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaSalto: 250
   gameManager: {fileID: 538573279}
+  puntajerey: 0
   FuerzadeLado: 100
 --- !u!1 &2062824709
 GameObject:

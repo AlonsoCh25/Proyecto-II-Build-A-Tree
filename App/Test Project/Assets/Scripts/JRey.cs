@@ -12,6 +12,9 @@ public class JRey : MonoBehaviour
     
     private Rigidbody2D rigidbody2D;
     private Animator animator;
+
+    public float FuerzadeAtaque;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,12 @@ public class JRey : MonoBehaviour
         {
             animator.SetBool("RunReyL",false);
             rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
-        } 
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetBool("HitRey", true);
+            rigidbody2D.AddForce(new Vector2(0, FuerzadeAtaque));
+        }
         
     }
 

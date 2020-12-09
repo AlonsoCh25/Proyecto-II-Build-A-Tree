@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Threading;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,12 +30,25 @@ public class GameManager : MonoBehaviour
     public GameObject PInicio2;
     public GameObject PInicio3;
     public GameObject PInicio4;
+    public Text PuntajeRey;
+    public Text PuntajeBlue;
+    public Text PuntajePink;
+    public Text PuntajeFrog;
+    public Text NomRey;
+    public Text NomBlue;
+    public Text NomPink;
+    public Text NomFrog;
+    public InputField Jugador1;
+    public InputField Jugador2;
+    public InputField Jugador3;
+    public InputField Jugador4;
     public Renderer fondo;
     public bool gameOver = false;
     public bool start = false;
     public List<GameObject> plataformas;
     public List<GameObject> personajesinicio;
     public JBlue jblue = new JBlue();
+    public string Message;
     Client client = new Client();
     // Start is called before the first frame update
     public void Evento()
@@ -50,9 +64,22 @@ public class GameManager : MonoBehaviour
         }
         while (true)
         {
-            
+            if (client.GetMessage() != null)
+            {
+                Message = client.GetMessage();
+                client.setMessage(null);
+                client.SendMessage(Message);
+                print(Message);
+            }
+
         }
     }
+
+    public void Receive_message()
+    {
+        
+    }
+
     void Start()
     {
         //Inicia el cliente
@@ -76,12 +103,11 @@ public class GameManager : MonoBehaviour
         PInicio2 = Instantiate(blueInicio, new Vector2(11, 6), Quaternion.identity);
         PInicio3 = Instantiate(pinkInicio, new Vector2(-11, -6), Quaternion.identity);
         PInicio4 = Instantiate(frogInicio, new Vector2(11, -6), Quaternion.identity);
-        
-        
-
     }
+    
+    
 
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
         string message;
@@ -101,7 +127,6 @@ public class GameManager : MonoBehaviour
                 Destroy(PInicio4.gameObject);
             }
         }
-
         if (start == true && gameOver == true)
         {
             menuGameOver.SetActive(true);
@@ -111,14 +136,32 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-        
         if (start == true && gameOver == false)
         {
             menuPrincipal.SetActive(false);
             
             fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.02f, 0) * Time.deltaTime;
         }
-        
+
+        if (Jugador1.text != "")
+        {
+            NomRey.text = (Jugador1.text).ToString();
+        }
+
+        if (Jugador2.text != "")
+        {
+            NomBlue.text = (Jugador2.text).ToString();
+        }
+
+        if (Jugador3.text != "")
+        {
+            NomPink.text = (Jugador3.text).ToString();
+        }
+
+        if (Jugador4.text != "")
+        {
+            NomFrog.text = (Jugador4.text).ToString();
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

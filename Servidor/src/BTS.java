@@ -6,6 +6,7 @@ public class BTS {
     public boolean isEmpty(){
         return this.root == null;
     }
+    //busca minimo
     public Node FindMax(){
         if(isEmpty()){
             return null;
@@ -34,6 +35,7 @@ public class BTS {
             return this.findmin();
         }
     }
+    //busca maximo
     private Node findmin(){
         Node node = null;
         Node current = this.root;

@@ -47,7 +47,6 @@ public class Client : MonoBehaviour
             Array.Resize(ref ByRec, a);
             setMessage(Encoding.Default.GetString(ByRec));
         }
-        
     }
 }
     

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,10 @@ public class JBlue : MonoBehaviour
     public float FuerzadeLado;
 
     public float FuerzadeAtaque;
-    
+
+    public GameManager gameManager;
+
+    public int puntajeblue = 0;
 
     private Rigidbody2D _rigidbody2D;
 
@@ -33,16 +37,27 @@ public class JBlue : MonoBehaviour
         {
             animator.SetBool("RunBlue", true);
             _rigidbody2D.AddForce(new Vector2(FuerzadeLado, 0));
-        }
-        if (Input.GetKeyDown(KeyCode.F))
+        } else{
+            if (Input.GetKeyDown(KeyCode.F))
         {
             animator.SetBool("RunBlueL", true);
             _rigidbody2D.AddForce(new Vector2(-FuerzadeLado, 0));
+        }
+            
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
             animator.SetBool("HitBlue", true);
             _rigidbody2D.AddForce(new Vector2(0, FuerzadeAtaque));
         }
+        if (puntajeblue >= 0)
+        {
+            print("puntaje");
+            puntajeblue += 1;
+            (gameManager.PuntajeBlue).text = puntajeblue.ToString();
+        }
     }
+
+}
+
 }

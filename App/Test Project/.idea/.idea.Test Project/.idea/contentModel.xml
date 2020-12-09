@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Test Project.708327821.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Admin\Desktop\Proyecto-II-Build-A-Tree\App\Test Project" t="IncludeRecursive">
+    <e p="C:\intellij\Proyecto-II-Build-A-Tree\App\Test Project" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -96,5 +94,7 @@
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="Test Project.sln" t="IncludeFlat" />
     </e>
+    <e p="C:\Users\Hewlett Packard\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Hewlett Packard\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Test Project.-1158446611.00" t="ExcludeRecursive" />
   </component>
 </project>
