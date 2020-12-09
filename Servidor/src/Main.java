@@ -12,5 +12,10 @@ public class Main {
         System.out.println(bts.isEmpty());
         System.out.println(bts.FindMin().getData());
         System.out.println(bts.FindMax().getData());
+        bts.Delete(4);
+        bts.Delete(1);
+        bts.Delete(3);
+        bts.Delete(2);
+        System.out.println(bts.isEmpty());
     }
 }
