@@ -2,6 +2,9 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Thread.sleep;
 /**
  * Esta clase corresponde al codigo del B Tree, el cual se encarga de mantener el las inserciones y eliminaciones de los datos en orden.
@@ -13,6 +16,10 @@ public class Server implements Runnable{
     private BTS bts;
     private SplayTree splay;
     private AVL avl;
+    private ArrayList<Integer> L_avl;
+    private ArrayList<Integer> L_bts;
+    private ArrayList<Integer> L_btree;
+    private ArrayList<Integer> L_splay;
     private int port;
     private ServerSocket Server;
     private Socket Client;
@@ -39,6 +46,10 @@ public class Server implements Runnable{
      * Instanciacion de variables del servidor
      */
     public Server(){
+        this.L_avl = new ArrayList<Integer>();
+        this.L_splay = new ArrayList<Integer>();
+        this.L_btree = new ArrayList<Integer>();
+        this.L_bts = new ArrayList<Integer>();
         this.avl = new AVL();
         this.btree = new Btree(2);
         this.bts = new BTS();
@@ -197,19 +208,41 @@ public class Server implements Runnable{
      * @param tree  arbol a eliminar
      */
     public void DeleteTrees(String tree){
+        int rango;
         if(tree == "Splay"){
             if(!splay.isEmpty()){
-                splay.clear();
+                rango = L_splay.size();
+                for(int i = 0; i < rango; i++){
+                    splay.remove(L_splay.get(i));
+                }
+                L_splay.clear();
+                setUlt_T("T_11");
             }
         }
         if(tree == "Btree"){
+            rango = L_btree.size();
+            for(int i = 0; i < rango; i++){
+                btree.Delete(L_btree.get(i));
+            }
+            L_btree.clear();
+            setUlt_Cu("Cu_45");
 
         }
         if(tree == "BTS"){
-
+            rango = L_bts.size();
+            for(int i = 0; i < rango; i++){
+                bts.Delete(L_bts.get(i));
+            }
+            L_bts.clear();
+            setUlt_R("R_44");
         }
         if(tree == "AVL"){
-
+            rango = L_avl.size();
+            for(int i = 0; i < rango; i++){
+                avl.eliminar(L_avl.get(i));
+            }
+            L_avl.clear();
+            setUlt_C("C_15");
         }
 
     }
@@ -291,132 +324,166 @@ public class Server implements Runnable{
                     case "Completo_T":
                         SetC_triangulo(false);
                         break;
-                    case "Reinicia_C":
+                    case "Reiniciar_C":
+                        DeleteTrees("AVL");
                         break;
-                    case "Reinicia_Cu":
+                    case "Reiniciar_Cu":
+                        DeleteTrees("Btree");
                         break;
-                    case "Reinicia_R":
+                    case "Reiniciar_R":
+                        DeleteTrees("BTS");
                         break;
-                    case "Reinicia_T":
+                    case "Reiniciar_T":
+                        DeleteTrees("Splay");
                         break;
                     case "C_15":
                         setUlt_C("C_6");
                         avl.insertar(15);
+                        L_avl.add(15);
                         break;
                     case "C_6":
                         setUlt_C("C_50");
                         avl.insertar(6);
+                        L_avl.add(6);
                         break;
                     case "C_50":
                         setUlt_C("C_4");
                         avl.insertar(50);
+                        L_avl.add(50);
                         break;
                     case "C_4":
                         setUlt_C("C_7");
                         avl.insertar(4);
+                        L_avl.add(4);
                         break;
                     case "C_7":
                         setUlt_C("C_23");
                         avl.insertar(7);
+                        L_avl.add(7);
                         break;
                     case "C_23":
                         setUlt_C("C_71");
                         avl.insertar(23);
+                        L_avl.add(23);
                         break;
                     case "C_71":
                         setUlt_C("C_5");
                         avl.insertar(71);
+                        L_avl.add(71);
                         break;
                     case "C_5":
                         avl.insertar(5);
+                        L_avl.add(5);
                         //setUlt_C("C_15");
                         break;
                     case "T_11":
                         setUlt_T("T_12");
                         splay.insert(11);
+                        L_splay.add(11);
                         break;
                     case "T_12":
                         setUlt_T("T_55");
                         splay.insert(12);
+                        L_splay.add(12);
                         break;
                     case "T_55":
                         setUlt_T("T_59");
                         splay.insert(55);
+                        L_splay.add(55);
                         break;
                     case "T_59":
                         setUlt_T("T_44");
                         splay.insert(59);
+                        L_splay.add(59);
                         break;
                     case "T_44":
                         setUlt_T("T_70");
                         splay.insert(44);
+                        L_splay.add(44);
                         break;
                     case "T_70":
                         setUlt_T("T_15");
                         splay.insert(70);
+                        L_splay.add(70);
                         break;
                     case "T_15":
                         //setUlt_T("T_11");
                         splay.insert(15);
+                        L_splay.add(15);
                         break;
                     case "Cu_45":
                         setUlt_Cu("Cu_23");
                         btree.Insert(45);
+                        L_btree.add(45);
                         break;
                     case "Cu_23":
                         setUlt_Cu("Cu_58");
                         btree.Insert(23);
+                        L_btree.add(23);
                         break;
                     case "Cu_58":
                         setUlt_Cu("Cu_71");
                         btree.Insert(58);
+                        L_btree.add(58);
                         break;
                     case "Cu_71":
                         setUlt_Cu("Cu_44");
                         btree.Insert(71);
+                        L_btree.add(71);
                         break;
                     case "Cu_44":
                         setUlt_Cu("Cu_55");
                         btree.Insert(44);
+                        L_btree.add(44);
                         break;
                     case "Cu_55":
                         setUlt_Cu("Cu_77");
                         btree.Insert(55);
+                        L_btree.add(55);
                         break;
                     case "Cu_77":
                         btree.Insert(77);
+                        L_btree.add(77);
                         //setUlt_Cu("Cu_45");
                         break;
                     case "R_44":
                         setUlt_R("R_36");
                         bts.insert(44);
+                        L_bts.add(44);
                         break;
                     case "R_36":
                         setUlt_R("R_69");
                         bts.insert(36);
+                        L_bts.add(36);
                         break;
                     case "R_69":
                         setUlt_R("R_34");
                         bts.insert(69);
+                        L_bts.add(69);
                         break;
                     case "R_34":
                         setUlt_R("R_38");
                         bts.insert(34);
+                        L_bts.add(34);
                         break;
                     case "R_38":
                         setUlt_R("R_50");
                         bts.insert(38);
+                        L_bts.add(38);
                         break;
                     case "R_50":
                         setUlt_R("R_91");
                         bts.insert(50);
+                        L_bts.add(50);
                         break;
                     case "R_91":
                         setUlt_R("R_39");
                         bts.insert(91);
+                        L_bts.add(91);
                         break;
                     case "R_39":
                         bts.insert(39);
+                        L_bts.add(39);
                         //setUlt_R("R_44");
                         break;
                 }
@@ -436,7 +503,7 @@ public class Server implements Runnable{
             if(GetGame_Active()) {
                 int a = (int) (Math.random()*3 +1);
                 try {
-                    sleep(10000);
+                    sleep(12000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -465,7 +532,7 @@ public class Server implements Runnable{
             if(GetGame_Active()) {
                 int a = (int) (Math.random()*4 +1);
                 try {
-                    sleep(10000);
+                    sleep(12000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -507,7 +574,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
             try {
-                sleep(5000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -568,7 +635,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             try {
-                sleep(5000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -626,7 +693,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             try {
-                sleep(5000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -688,7 +755,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             try {
-                sleep(5000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
