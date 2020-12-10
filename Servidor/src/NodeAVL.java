@@ -1,3 +1,4 @@
+
 public class NodeAVL {
     Object data;
     NodeAVL right;
