@@ -1,19 +1,29 @@
+/**
+ * Esta clase corresponde al nodo explusivo para el uso del arbol Splay
+ * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
+ * @version 08/12/2020
+ */
 public class SplayNode {
-
     SplayNode left, right, parent;
     int element;
 
-    /** Constructor **/
+    /**
+     * Constructor
+     */
     public SplayNode()
     {
         this(0, null, null, null);
     }
-    /** Constructor **/
+    /**
+     * Constructor
+     */
     public SplayNode(int ele)
     {
         this(ele, null, null, null);
     }
-    /** Constructor **/
+    /**
+     * Constructor
+     */
     public SplayNode(int ele, SplayNode left, SplayNode right, SplayNode parent)
     {
         this.left = left;

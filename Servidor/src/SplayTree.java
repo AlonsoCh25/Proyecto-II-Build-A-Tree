@@ -1,27 +1,40 @@
+/**
+ * Esta clase corresponde al codigo del arbol Splay, el cual consiste de llevar el nodo de "menor prioridad" hacia la raiz
+ * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
+ * @version 08/12/2020
+ */
 public class SplayTree {
     private SplayNode root;
     private int count = 0;
 
-    /** Constructor **/
+    /**
+     *  Constructor
+     */
     public SplayTree()
     {
         root = null;
     }
 
-    /** Function to check if tree is empty **/
+    /**
+     * Verifica si el arbol esta vacio
+     */
     public boolean isEmpty()
     {
         return root == null;
     }
 
-    /** clear tree **/
+    /**
+     * Limpiar el arbol
+     */
     public void clear()
     {
         root = null;
         count = 0;
     }
 
-    /** function to insert element */
+    /**
+     * Se encargade la insercion de un elemento
+     */
     public void insert(int ele)
     {
         SplayNode z = root;
@@ -46,7 +59,9 @@ public class SplayTree {
         Splay(z);
         count++;
     }
-    /** rotate **/
+    /**
+     * rotacion del arbol
+     */
     public void makeLeftChildParent(SplayNode c, SplayNode p)
     {
         if ((c == null) || (p == null) || (p.left != c) || (c.parent != p))
@@ -68,7 +83,9 @@ public class SplayTree {
         c.right = p;
     }
 
-    /** rotate **/
+    /**
+     * rotacion del nodo por el padre
+     */
     public void makeRightChildParent(SplayNode c, SplayNode p)
     {
         if ((c == null) || (p == null) || (p.right != c) || (c.parent != p))
@@ -88,7 +105,9 @@ public class SplayTree {
         c.left = p;
     }
 
-    /** function splay **/
+    /**
+     *  Realizacion del splay
+     */
     private void Splay(SplayNode x)
     {
         while (x.parent != null)
@@ -135,19 +154,22 @@ public class SplayTree {
         root = x;
     }
 
-    /** function to remove element **/
+    /**
+     * Se encarga de remover el elemento deseado
+     **/
     public void remove(int ele)
     {
         SplayNode node = findNode(ele);
         remove(node);
     }
 
-    /** function to remove node **/
+    /**
+     *  Se encarga de remover el nodo deseado
+     */
     private void remove(SplayNode node)
     {
         if (node == null)
             return;
-
         Splay(node);
         if( (node.left != null) && (node.right !=null))
         {
@@ -181,18 +203,27 @@ public class SplayTree {
         count--;
     }
 
-    /** Functions to count number of nodes **/
+    /**
+     * Se encarga de contar el numero de nodos que contiene el arbol
+     */
     public int countNodes()
     {
         return count;
     }
 
-    /** Functions to search for an element **/
+    /**
+     * Funcion para buscar un elemento del arbol
+     */
     public boolean search(int val)
     {
         return findNode(val) != null;
     }
 
+    /**
+     * Se encarga de buscar el nodo deseadp
+     * @param ele elemento a buscar
+     * @return
+     */
     private SplayNode findNode(int ele)
     {
         SplayNode PrevNode = null;
@@ -218,7 +249,9 @@ public class SplayTree {
         return null;
     }
 
-    /** Function for inorder traversal **/
+    /**
+     * Realiza el recorrido in/orden
+     */
     public void inorder()
     {
         inorder(root);
@@ -232,8 +265,9 @@ public class SplayTree {
             inorder(r.right);
         }
     }
-
-    /** Function for preorder traversal **/
+    /**
+     * Realiza el recorrido pre/orden
+     */
     public void preorder()
     {
         preorder(root);
@@ -247,8 +281,9 @@ public class SplayTree {
             preorder(r.right);
         }
     }
-
-    /** Function for postorder traversal **/
+    /**
+     * Realiza el recorrido post/orden
+     */
     public void postorder()
     {
         postorder(root);
