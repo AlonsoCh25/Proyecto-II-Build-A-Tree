@@ -303,6 +303,7 @@ public class Server implements Runnable{
                         avl.insertar(50);
                         L_avl.add(50);
                         break;
+
                     case "C_4":
                         setUlt_C("C_7");
                         avl.insertar(4);
