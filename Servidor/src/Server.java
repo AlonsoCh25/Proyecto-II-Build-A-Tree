@@ -303,7 +303,6 @@ public class Server implements Runnable{
                         avl.insertar(50);
                         L_avl.add(50);
                         break;
-
                     case "C_4":
                         setUlt_C("C_7");
                         avl.insertar(4);
@@ -452,7 +451,7 @@ public class Server implements Runnable{
             if(GetGame_Active()) {
                 int a = (int) (Math.random()*3 +1);
                 try {
-                    sleep(10000);
+                    sleep(12000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -478,7 +477,7 @@ public class Server implements Runnable{
             if(GetGame_Active()) {
                 int a = (int) (Math.random()*4 +1);
                 try {
-                    sleep(10000);
+                    sleep(12000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -517,7 +516,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_circulo());
             try {
-                sleep(10000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -575,7 +574,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             try {
-                sleep(10000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -630,7 +629,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             try {
-                sleep(10000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -689,7 +688,7 @@ public class Server implements Runnable{
             System.out.println(GetGame_Active());
             System.out.println(GetC_cuadrado());
             try {
-                sleep(5000);
+                sleep(12000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
