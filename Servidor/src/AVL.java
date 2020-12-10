@@ -1,13 +1,21 @@
+/**
+ * Esta clase corresponde al codigo del arbol AVL, el cual es un arbol binario de busqueda y se caracteriza principalmente por estar balanceado.
+ * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
+ * @version 08/12/2020
+ */
 public class AVL{
     private NodeAVL root;
-
     public AVL(){
         root = null;
     }
     public NodeAVL obtenerRaiz(){
         return root;
     }
-    //Buscar
+    /**
+     * @param d el que se esta buscando
+     * @param r funciona para llamar los datos del nodo
+     * @return busqyeda
+     */
     public NodeAVL buscar(int d, NodeAVL r){
         if (root == null){
             return null;
@@ -20,6 +28,10 @@ public class AVL{
         }
     }
     //Obtener el Factor de Equilibrio
+    /**
+     * @param x se  utiliza para obeter el factor de balanceo
+     * @return obtiene el factor
+     */
     public int obtenerFE(NodeAVL x){
         if (x == null){
             return -1;
@@ -28,6 +40,10 @@ public class AVL{
         }
     }
     //rotacion Simple izquierda
+    /**
+     * @param c nodo que se rotara
+     * @return rotacion hacia la izquierda del arbol
+     */
     public NodeAVL rotacionIzquierda(NodeAVL c){
         NodeAVL auxiliar = c.left;
         c.left = auxiliar.right;
@@ -37,6 +53,10 @@ public class AVL{
         return auxiliar;
     }
     //Rotacion simple derecha
+    /**
+     * @param c nodo que se rotara
+     * @return rotacion hacia la derecha del arbol
+     */
     public NodeAVL rotacionDerecha(NodeAVL c){
         NodeAVL auxiliar = c.right;
         c.right = auxiliar.left;
@@ -46,6 +66,10 @@ public class AVL{
         return auxiliar;
     }
     //Rotacion Doble a la Derecha
+    /**
+     * @param c nodo que se rotara
+     * @return rotacion doble hacia la izquierda del arbol
+     */
     public NodeAVL rotacionDobleIzquierda(NodeAVL c){
         NodeAVL temporal;
         c.left = rotacionDerecha(c.left);
@@ -53,6 +77,10 @@ public class AVL{
         return temporal;
     }
     //Rotacion Doble a la Izquierda
+    /**
+     * @param c nodo que se rotara
+     * @return rotacion doble hacia la derecha del arbol
+     */
     public NodeAVL rotacionDobleDerecha(NodeAVL c){
         NodeAVL temporal;
         c.right = rotacionIzquierda(c.right);
@@ -60,6 +88,11 @@ public class AVL{
         return temporal;
     }
     //Metodo insertar AVL
+    /**
+     * @param nuevo nuevo nodo a insertar
+     * @param subAr sub arbol del arbol
+     * @return la insercion del nuevo nodo
+     */
     public NodeAVL insertarAVL(NodeAVL nuevo, NodeAVL subAr){
         NodeAVL nuevoPadre = subAr;
         if ((int)nuevo.data < (int)subAr.data){
@@ -112,6 +145,10 @@ public class AVL{
     }
     //Recorridos
     //Método para recorrer el Arbol InOrden
+    /**
+     * Recorre el arbol por el recorrido in/orden
+     * @param r nodo del arbol
+     */
     public void inOrden(NodeAVL r){
         if(r != null){
             inOrden(r.left);
@@ -120,6 +157,10 @@ public class AVL{
         }
     }
     //Metodo para recorrer el Arbol Preorden
+    /**
+     * Recorre el arbol por el recorrido pre/orden
+     * @param r nodo del arbol
+     */
     public void preOrden(NodeAVL r){
         if (r != null){
             System.out.println(r.data + ", ");
@@ -128,6 +169,10 @@ public class AVL{
         }
     }
     //Metodo para recorrer el Arbol PostOrden
+    /**
+     * Recorre el arbol por el recorrido pre/orden
+     * @param r nodo del arbol
+     */
     public void postOrden(NodeAVL r){
         if(r != null){
             System.out.println(r.data + ", ");
@@ -136,6 +181,10 @@ public class AVL{
         }
     }
     //Metodo eliminar
+    /**
+     * @param nodo el nodo a eliminar
+     * @return el arbol con el nodo anterior eliminado
+     */
     public boolean soloRaiz(NodeAVL nodo){
         if (nodo.getRight() == null && nodo.getLeft() == null){
             nodo = null;
@@ -177,7 +226,6 @@ public class AVL{
             }else {
                 subAr.height = Math.max(obtenerFE(subAr.left),obtenerFE(subAr.right))+1;
             }
-
         }
         return nodo;
     }
@@ -190,6 +238,10 @@ public class AVL{
             root = EliminarNodo(root, d);
         }
     }
+    /**
+     * @param nodo nodo que sera reemplazado
+     * @return el arbol con el nodo anterior reemplazado
+     */
     public NodeAVL reemplazar(NodeAVL nodo){
         NodeAVL N1;
         NodeAVL N2;

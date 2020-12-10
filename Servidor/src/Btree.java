@@ -1,8 +1,12 @@
 import java.util.Stack;
-
+/**
+ * Esta clase corresponde al codigo del B Tree, el cual se encarga de mantener el las inserciones y eliminaciones de los datos en orden.
+ * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
+ * @version 08/12/2020
+ * @see https://gist.github.com/YuryShatilin/4217870
+ */
 public class Btree {
     private int T;
-
     public class Node {
         int n;
         int llave[] = new int[2*T-1];
@@ -18,6 +22,11 @@ public class Btree {
             return -1;
         };
     }
+
+    /**
+     * Atributos del arbol
+     * @param _T entrada del arbol
+     */
     public Btree(int _T) {
         T = _T;
         raiz = new Node();
@@ -43,6 +52,11 @@ public class Btree {
         }
     }
 
+    /**
+     * @param x posis x del arbol
+     * @param pos posicion que se desea acceder
+     * @param y posis y dela rbol
+     */
     private void Split (Node x , int pos , Node y) {
         Node z = new Node();
         z.hoja = y.hoja;
@@ -68,6 +82,10 @@ public class Btree {
         x.n = x.n + 1;
     }
 
+    /**
+     * Realiza el insert de los nodos deseados a partir de una llave
+     * @param llave llave que determinara el insert
+     */
     public void Insert (final int llave) {
         Node r = raiz;
         if (r.n == 2*T - 1 ) {
@@ -106,6 +124,12 @@ public class Btree {
             _Insert(x.hijo[i], k);
         }
     }
+
+    /**
+     * Borra el nodo seleccionado
+     * @param x nodo que se seleccionara
+     * @param llave llave que mantiene el orden del arbol
+     */
     private void Delete (Node x , int llave) {
         int pos = x.Find(llave);
         if (pos != -1) {
@@ -146,10 +170,6 @@ public class Btree {
                     x.llave[pos] = predllave;
                     return;
                 }
-                // Случай 2б
-
-                //System.out.println("2b");
-
                 Node nextNode = x.hijo[pos+1];
                 if (nextNode.n >= T) {
                     int nextllave = nextNode.llave[0];
@@ -168,11 +188,6 @@ public class Btree {
                     x.llave[pos] = nextllave;
                     return;
                 }
-                // Случай 2в
-
-                //System.out.println("2v");
-
-                // Пополняем одного сына другим
                 int temp = pred.n + 1;
                 pred.llave[pred.n++] = x.llave[pos];
                 for (int i = 0, j = pred.n ; i < nextNode.n ; i++) {
@@ -182,7 +197,6 @@ public class Btree {
                 for (int i = 0 ; i < nextNode.n+1 ; i++){
                     pred.hijo[temp++] = nextNode.hijo[i];
                 }
-
                 x.hijo[pos] = pred;
                 // Смещаем ключи(удаляем ключ)
                 for (int i = pos ; i < x.n ; i++) {
@@ -190,7 +204,6 @@ public class Btree {
                         x.llave[i] = x.llave[i+1];
                     }
                 }
-                // Удаляем лишнего сына
                 for (int i = pos+1 ; i < x.n+1 ; i++) {
                     if (i != 2*T - 1) {
                         x.hijo[i] = x.hijo[i+1];
@@ -207,8 +220,6 @@ public class Btree {
                 return;
             }
         } else {
-            // Если не содержится в этом узле
-            // Находим поддерево которое должно содержать ключ
             for (pos = 0 ; pos < x.n ; pos++) {
                 if (x.llave[pos] > llave) {
                     break;
@@ -221,7 +232,6 @@ public class Btree {
             }
             if (true) {
                 Node nb = null;// Hermano de la raiz del subarbol
-                // Случай 3а
                 int divisor = -1;
                 if (pos != x.n && x.hijo[pos+1].n >= T) {
                     divisor = x.llave[pos];
@@ -308,6 +318,14 @@ public class Btree {
         }
         Delete(raiz,llave);
     }
+
+    /**
+     * Busca las llaves correspondientes segun el orden del arbol
+     * @param a parametro de entrada para la busqueda de llaves
+     * @param b parametro de entrada para la busqueda de llaves
+     * @param x parametro de entrada para la busqueda de llaves
+     * @param st lugar donde se posicionara la llave
+     */
     private void Findllaves (int a, int b, Node x, Stack<Integer> st){
         int i = 0;
         for (i = 0 ; i < x.n && x.llave[i] < b; i++) {

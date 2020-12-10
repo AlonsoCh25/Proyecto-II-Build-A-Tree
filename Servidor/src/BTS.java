@@ -1,3 +1,8 @@
+/**
+ * Esta clase corresponde a la implementacion del codigo del arbol BTS
+ * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
+ * @version 08/12/2020
+ */
 public class BTS {
     Node root;
     Node last;
@@ -14,6 +19,11 @@ public class BTS {
             return this.findmax(node);
         }
     }
+
+    /**
+     * busca el nodo de valor mayor
+     * @return retorna el nodo de mayor valor
+     */
     public Node FindMax(){
         if(isEmpty()){
             return null;
@@ -38,6 +48,12 @@ public class BTS {
         }
         return node;
     }
+
+    /**
+     * busca el nodo de menor valor en el arbol
+     * @param node noso que se busca
+     * @return el nodo de menor valor del arbol
+     */
     public Node Findmin(Node node){
         if(isEmpty()){
             return null;
@@ -68,6 +84,11 @@ public class BTS {
         }
         return node;
     }
+
+    /**
+     * insercion de datos
+     * @param data dato a insertar
+     */
     public void insert(Object data){
         this.Insert(data ,this.root);
     }
@@ -90,6 +111,11 @@ public class BTS {
             }
         }
     }
+
+    /**
+     * Borrado de datos
+     * @param data dato que sera eliminado
+     */
     public void Delete(Object data){
         this.delete(data, this.root);
     }
