@@ -7,7 +7,7 @@ import static java.lang.Thread.sleep;
 public class Server implements Runnable{
     private Btree btree;
     private BTS bts;
-    private Splay splay;
+    private SplayTree splay;
     private AVL avl;
     private int port;
     private ServerSocket Server;
@@ -34,7 +34,7 @@ public class Server implements Runnable{
         this.avl = new AVL();
         this.btree = new Btree(2);
         this.bts = new BTS();
-        this.splay = new Splay();
+        this.splay = new SplayTree();
         this.port = 1000;
         this.Server = null;
         this.Client = null;
@@ -152,6 +152,23 @@ public class Server implements Runnable{
     public String getUlt_C() {
         return Ult_C;
     }
+    public void DeleteTrees(String tree){
+        if(tree == "Splay"){
+            if(!splay.isEmpty()){
+                splay.clear();
+            }
+        }
+        if(tree == "Btree"){
+
+        }
+        if(tree == "BTS"){
+
+        }
+        if(tree == "AVL"){
+
+        }
+
+    }
     public void run() {
         while(this.Server == null){
             try{
@@ -268,68 +285,90 @@ public class Server implements Runnable{
                         break;
                     case "T_11":
                         setUlt_T("T_12");
+                        splay.insert(11);
                         break;
                     case "T_12":
                         setUlt_T("T_55");
+                        splay.insert(12);
                         break;
                     case "T_55":
                         setUlt_T("T_59");
+                        splay.insert(55);
                         break;
                     case "T_59":
                         setUlt_T("T_44");
+                        splay.insert(59);
                         break;
                     case "T_44":
                         setUlt_T("T_70");
+                        splay.insert(44);
                         break;
                     case "T_70":
                         setUlt_T("T_15");
+                        splay.insert(70);
                         break;
                     case "T_15":
                         //setUlt_T("T_11");
+                        splay.insert(15);
                         break;
                     case "Cu_45":
                         setUlt_Cu("Cu_23");
+                        btree.Insert(45);
                         break;
                     case "Cu_23":
                         setUlt_Cu("Cu_58");
+                        btree.Insert(23);
                         break;
                     case "Cu_58":
                         setUlt_Cu("Cu_71");
+                        btree.Insert(58);
                         break;
                     case "Cu_71":
                         setUlt_Cu("Cu_44");
+                        btree.Insert(71);
                         break;
                     case "Cu_44":
                         setUlt_Cu("Cu_55");
+                        btree.Insert(44);
                         break;
                     case "Cu_55":
                         setUlt_Cu("Cu_77");
+                        btree.Insert(55);
                         break;
                     case "Cu_77":
+                        btree.Insert(77);
                         //setUlt_Cu("Cu_45");
                         break;
                     case "R_44":
                         setUlt_R("R_36");
+                        bts.insert(44);
                         break;
                     case "R_36":
                         setUlt_R("R_69");
+                        bts.insert(36);
                         break;
                     case "R_69":
                         setUlt_R("R_34");
+                        bts.insert(69);
                         break;
                     case "R_34":
                         setUlt_R("R_38");
+                        bts.insert(34);
                         break;
                     case "R_38":
                         setUlt_R("R_50");
+                        bts.insert(38);
                         break;
                     case "R_50":
                         setUlt_R("R_91");
+                        bts.insert(50);
                         break;
                     case "R_91":
                         setUlt_R("R_39");
+                        bts.insert(91);
                         break;
                     case "R_39":
+                        bts.insert(39);
                         //setUlt_R("R_44");
                         break;
                 }
