@@ -42,7 +42,6 @@ public class Btree {
             return Search(x.hijo[i],llave);
         }
     }
-
     private void Split (Node x , int pos , Node y) {
         Node z = new Node();
         z.hoja = y.hoja;
@@ -67,7 +66,6 @@ public class Btree {
         x.llave[pos] = y.llave[T-1];
         x.n = x.n + 1;
     }
-
     public void Insert (final int llave) {
         Node r = raiz;
         if (r.n == 2*T - 1 ) {
