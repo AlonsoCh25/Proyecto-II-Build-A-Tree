@@ -3,7 +3,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import static java.lang.Thread.sleep;
-
+/**
+ * Esta clase corresponde al codigo del B Tree, el cual se encarga de mantener el las inserciones y eliminaciones de los datos en orden.
+ * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
+ * @version 30/11/2020
+ */
 public class Server implements Runnable{
     private Btree btree;
     private BTS bts;
@@ -30,6 +34,10 @@ public class Server implements Runnable{
     private boolean C_cuadrado;
     private boolean C_rombo;
     private boolean C_triangulo;
+
+    /**
+     * Instanciacion de variables del servidor
+     */
     public Server(){
         this.avl = new AVL();
         this.btree = new Btree(2);
@@ -45,6 +53,11 @@ public class Server implements Runnable{
         this.Splay = false;
         this.Game_Active = false;
     }
+
+    /**
+     * Setters and getters necesarios para el sevidor
+     * @param active verifica si el servidor se encuentra activo
+     */
     public void setServerActive(boolean active){this.ServerActive = active;}
     public boolean isServerActive(){return this.ServerActive;}
     public Socket getClient(){return this.Client;}
@@ -93,10 +106,19 @@ public class Server implements Runnable{
     public void setGame_Active(boolean game_Active) {
         this.Game_Active = game_Active;
     }
+
+    /**
+     * Incrementa el puerto utilizado
+     */
     public void increasePort(){
         int port = getPort();
         setPort(port++);
     }
+
+    /**
+     * envia los mensajes respectivos al clienter
+     * @param OutMessage mensaje
+     */
     public void SendMessage(String OutMessage){
         try{
             OUT = new DataOutputStream(this.Client.getOutputStream());
@@ -109,6 +131,12 @@ public class Server implements Runnable{
     public void setInMessage(String inMessage) {
         this.InMessage = inMessage;
     }
+
+    /**
+     * bytes utilizados por el servidor
+     * @param b bytes a usar
+     * @return cantidad de bytes
+     */
     public String parseByte(byte[] b){
         String s = new String(b, StandardCharsets.UTF_8);
         return s;
@@ -116,6 +144,12 @@ public class Server implements Runnable{
     public String getInMessage() {
         return InMessage;
     }
+
+    /**
+     * Analiza el string de entrada
+     * @param S string de entrada
+     * @return string analizado
+     */
     public String ParseString(String S) {
         String Clean = "\u0000";
         StringBuilder sb = new StringBuilder();
@@ -128,6 +162,11 @@ public class Server implements Runnable{
         }
         return sb.toString();
     }
+
+    /**
+     * setters and getters del unity
+     * @param ult_token tokens usados en el unity para los arboles
+     */
     public void setUlt_C(String ult_token) {
         Ult_C = ult_token;
     }
@@ -152,6 +191,11 @@ public class Server implements Runnable{
     public String getUlt_C() {
         return Ult_C;
     }
+
+    /**
+     * elimina los arboles cuando cumple la condicion
+     * @param tree  arbol a eliminar
+     */
     public void DeleteTrees(String tree){
         if(tree == "Splay"){
             if(!splay.isEmpty()){
@@ -169,6 +213,10 @@ public class Server implements Runnable{
         }
 
     }
+
+    /**
+     * Realiza el corrimiento del server
+     */
     public void run() {
         while(this.Server == null){
             try{
@@ -377,6 +425,10 @@ public class Server implements Runnable{
             }
         }
     }
+
+    /**
+     * eventos necesarios para lospoderes definidos en el Unity
+     */
     public void Eventos_poderes(){
         while(true){
             System.out.println(GetGame_Active());
@@ -403,6 +455,9 @@ public class Server implements Runnable{
             }
         }
     }
+    /**
+     * eventos necesarios para los arboles definidos en el Unity
+     */
     public void Eventos_arboles(){
         while(true){
             System.out.println(GetGame_Active());
@@ -444,6 +499,9 @@ public class Server implements Runnable{
             }
         }
     }
+    /**
+     * eventos necesarios para los circulos definidos en el Unity
+     */
     public void Eventos_Circulo(){
         while(true){
             System.out.println(GetGame_Active());
@@ -502,6 +560,9 @@ public class Server implements Runnable{
             }
         }
     }
+    /**
+     * eventos necesarios para los cuadrados definidos en el Unity
+     */
     public void Eventos_Cuadrado(){
         while(true){
             System.out.println(GetGame_Active());
@@ -557,6 +618,9 @@ public class Server implements Runnable{
             }
         }
     }
+    /**
+     * eventos necesarios para los rombos definidos en el Unity
+     */
     public void Eventos_Rombo(){
         while(true){
             System.out.println(GetGame_Active());
@@ -616,6 +680,9 @@ public class Server implements Runnable{
             }
         }
     }
+    /**
+     * eventos necesarios para los triangulos definidos en el Unity
+     */
     public void Eventos_Triangulo(){
         while(true){
             System.out.println(GetGame_Active());
@@ -669,6 +736,10 @@ public class Server implements Runnable{
             }
         }
     }
+
+    /**
+     * eventos secundarios que surgen en la interfaz necesarios de validar
+     */
     public void Eventos_Secundarios(){
         while (isServerActive()){
             if (GetGame_Active()){
