@@ -3,7 +3,7 @@ import java.util.Stack;
  * Esta clase corresponde al codigo del B Tree, el cual se encarga de mantener el las inserciones y eliminaciones de los datos en orden.
  * @autor Kenneth Castillo, Olman Rodriguez y Montserrat Monge.
  * @version 08/12/2020
- * @see https://gist.github.com/YuryShatilin/4217870
+ * @see //https://gist.github.com/YuryShatilin/4217870
  */
 public class Btree {
     private int T;
